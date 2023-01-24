@@ -16,7 +16,7 @@ class BuildDrawer extends StatelessWidget {
         children: [
           UserAccountsDrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.purple,
+              color: Color(0xff1f9f13),
             ),
             accountName: Text("Lindel Yosh"),
             accountEmail: Text("lindel795@gmail.com"),

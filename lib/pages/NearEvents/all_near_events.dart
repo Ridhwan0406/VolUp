@@ -5,6 +5,7 @@ import 'package:flutter_application_1/pages/NearEvents/map_view.dart';
 import 'package:flutter_application_1/pages/NearEvents/navigation_screen.dart';
 import 'package:flutter_application_1/pages/home/home_page.dart';
 import 'package:flutter_application_1/route/routing_page.dart';
+import 'package:flutter_application_1/widgets/build_drawer.dart';
 import 'package:geolocator/geolocator.dart';
 
 class AllNearEvents extends StatefulWidget {
@@ -50,9 +51,10 @@ class _AllNearEventsState extends State<AllNearEvents> {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
+      drawer: BuildDrawer(),
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Color(0xff2980b9),
+        backgroundColor: Color(0xff1f9f13),
         title: Text("All Volunteer Events Near you"),
       ),
       body: Padding(
@@ -107,7 +109,7 @@ class _AllNearEventsState extends State<AllNearEvents> {
                 },
                 
               child: Container(
-                color: Color(0xff3498db),
+                color: Color(0xff1f9f13),
                 height: height * 0.9,
                 width: width * 0.3,
                 child: Column(
