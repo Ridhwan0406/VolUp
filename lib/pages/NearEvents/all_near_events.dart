@@ -69,14 +69,9 @@ class _AllNearEventsState extends State<AllNearEvents> {
             if (!streamSnapshot.hasData) {
               return CircularProgressIndicator();
             }
-            return GridView.builder(
+            return ListView.separated(
+            separatorBuilder: (context, index) => Divider(),
             itemCount: streamSnapshot.data!.docs.length,
-            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 200,
-              childAspectRatio: 3 / 3,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-            ),
             itemBuilder: (context, index) {
               double storelat = streamSnapshot.data!.docs[index]['latitude'];
               double storelng = streamSnapshot.data!.docs[index]['longitude'];
@@ -91,69 +86,35 @@ class _AllNearEventsState extends State<AllNearEvents> {
               var distance = distanceImMeter?.round().toInt();
               
               if (distance! <= 5000) {
-                return GestureDetector(
-                  onTap: () {
-                    RoutingPage.goTonext(
-                      context: context,
-                      navigateTo: NavigationScreen(
-                        storelat,
-                        storelng
-
-                        // double.parse(streamSnapshot.data!.docs[index]['latitude']),
-                        // double.parse(streamSnapshot.data!.docs[index]['longitude'])
-                      
-                        // streamSnapshot.data!.docs[index]['latitude'],
-                        // streamSnapshot.data!.docs[index]['longitude']
-                    ),
-                  );
-                },
-                
-              child: Container(
-                color: Color(0xff1f9f13),
-                height: height * 0.9,
-                width: width * 0.3,
-                child: Column(
-                  children: [
-                    Container(
-                      height: height * 0.12,
-                        width: width,
-                      child: Image.network(
-                        streamSnapshot.data!.docs[index]['image'],
-                        fit: BoxFit.fill,
+                  return ListTile(
+                    leading: Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: NetworkImage(
+                                streamSnapshot.data!.docs[index]['image']),
+                            fit: BoxFit.fill),
                       ),
                     ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Text(
+                    title: Text(
                       streamSnapshot.data!.docs[index]['name'],
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
                       ),
                     ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    // Row(
-                    //   mainAxisAlignment: MainAxisAlignment.center,
-                    //   children: [
-                    //     Icon(Icons.location_on),
-                    //     Text(
-                    //       "${streamSnapshot.data!.docs[index]['distance'].round()} KM Away",
-                    //       style: TextStyle(
-                    //         fontSize: 18,
-                    //         fontWeight: FontWeight.bold,
-                    //         color: Colors.white,
-                    //       ),
-                    //     ),
-                    //   ],
-                    // ),
-                  ],
-                ),
-              ),
-            );
+                    onTap: () {
+                      RoutingPage.goTonext(
+                        context: context,
+                        navigateTo: NavigationScreen(
+                            storelat,
+                            storelng
+                        ),
+                      );
+                    },
+                  );
           } else {
             return Container();
           }
