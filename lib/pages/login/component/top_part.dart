@@ -16,7 +16,7 @@ class TopPart extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                       child: Image.asset(
                         "images/logo.png",
-                        scale: 8,
+                        scale: 2.5,
                       ),
                     ),
                     SizedBox(

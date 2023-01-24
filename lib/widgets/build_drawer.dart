@@ -18,10 +18,10 @@ class BuildDrawer extends StatelessWidget {
             decoration: BoxDecoration(
               color: Color(0xff1f9f13),
             ),
-            accountName: Text("Lindel Yosh"),
-            accountEmail: Text("lindel795@gmail.com"),
+            accountName: Text("Name"),
+            accountEmail: Text("Email"),
             currentAccountPicture: CircleAvatar(
-              backgroundImage: AssetImage("images/logo.png"),
+              backgroundImage: AssetImage("images/default_profile.jpg"),
             ),
           ),
 
