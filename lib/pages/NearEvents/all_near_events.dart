@@ -54,7 +54,7 @@ class _AllNearEventsState extends State<AllNearEvents> {
       drawer: BuildDrawer(),
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Color(0xff1f9f13),
+        backgroundColor: Color.fromARGB(255, 132, 18, 238),
         title: Text("All Volunteer Events Near you"),
       ),
       body: Padding(

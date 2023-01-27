@@ -26,8 +26,8 @@ class _MyButtonState extends State<MyButton> {
         decoration: BoxDecoration(  
           gradient: LinearGradient(
             colors: [
-              Color(0xff027f47),
-              Color(0xff01a95c)
+              Color.fromARGB(255, 139, 50, 240),
+              Color.fromARGB(255, 132, 18, 238)
             ],
             begin: Alignment.centerLeft,
             end: Alignment.centerRight

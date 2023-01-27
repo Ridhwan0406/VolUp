@@ -16,10 +16,17 @@ class BuildDrawer extends StatelessWidget {
         children: [
           UserAccountsDrawerHeader(
             decoration: BoxDecoration(
-              color: Color(0xff1f9f13),
+              gradient: LinearGradient(
+              colors: [
+              Color.fromARGB(255, 139, 50, 240),
+              Color.fromARGB(255, 132, 18, 238)
+            ],
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight
+          ),
             ),
-            accountName: Text("Name"),
-            accountEmail: Text("Email"),
+            accountName: Text("Lindel"),
+            accountEmail: Text("lindel795@gmail.com"),
             currentAccountPicture: CircleAvatar(
               backgroundImage: AssetImage("images/default_profile.jpg"),
             ),
@@ -57,10 +64,10 @@ class BuildDrawer extends StatelessWidget {
             leading: IconButton(
               onPressed: () {},
               icon: Icon(
-                Icons.add,
+                Icons.money,
               ),
             ),
-            title: Text("Saved Event"),
+            title: Text("Donation"),
           ),
 
 
