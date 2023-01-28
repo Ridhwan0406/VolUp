@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/NearEvents/all_near_events.dart';
-import 'package:flutter_application_1/pages/NearEvents/map_view.dart';
 import 'package:flutter_application_1/pages/home/home_page.dart';
 import 'package:flutter_application_1/pages/welcome/welcome_page.dart';
 import 'package:provider/provider.dart';

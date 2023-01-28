@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/NearEvents/dummy_events.dart';
-import 'package:flutter_application_1/pages/NearEvents/map_view.dart';
 import 'package:flutter_application_1/pages/NearEvents/navigation_screen.dart';
 import 'package:flutter_application_1/pages/home/home_page.dart';
 import 'package:flutter_application_1/route/routing_page.dart';
@@ -85,7 +83,7 @@ class _AllNearEventsState extends State<AllNearEvents> {
               
               var distance = distanceImMeter?.round().toInt();
               
-              if (distance! <= 5000) {
+              if (distance! <= 50000) {
                   return ListTile(
                     leading: Container(
                       width: 50,
